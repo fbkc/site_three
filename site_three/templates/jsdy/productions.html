@@ -1,0 +1,38 @@
+﻿#parse("header.html")
+<div class="production">
+    <div class="title">产品展示 <b>/ PRODUCTION</b></div>
+    <div class="container mt15">
+        <div class="production_type clear_pull">
+            <a href="#">$data.companyName</a>
+        </div>
+        <div class="production_container clear_pull">
+            #foreach($p in $data.ProductList)
+            <div class="production_container_item">
+                <a href="$p.titleURL">
+                    <img src="$p.titleImg" alt="$p.title" onerror="this.src='$data.hostUrl/statics/images/nopic.gif'" />
+                    <p>$p.title</p>
+                </a>
+            </div>
+            #end
+        </div>
+    </div>
+</div>
+<div class="news">
+    <div class="title">推荐阅读</div>
+    <div class="container">
+        <ul class="clear_pull mt15">
+            #foreach($p in $data.NewsList)
+            <li>
+                <a href="$p.titleURL">$p.title</a>
+                <span class="time">$p.addTime</span>
+            </li>
+            #end
+        </ul>
+    </div>
+</div>
+
+<script language=javascript src='$data.hostUrl/templates/jsdy/footer.html'></script>
+<script src="$data.hostUrl/statics/js/public.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+﻿#parse("header.html")
+<div class="introduce">
+    <div class="title">公司简介 <b>/ INTRODUCE</b></div>
+    <div class="container clear_pull">
+        <div class="introduce_detail">
+            <img src="http://tu.ossfiles.cn:9186/group1/M00/11/BC/rBgIBlxw833kO5QSAADD64qlhVs881.jpg" />
+            <h3>$data.companyName</h3>
+            <p>$data.companyRemark</p><p><br></p>
+        </div>
+    </div>
+</div>
+<div class="news">
+    <div class="title">推荐阅读</div>
+    <div class="container">
+        <ul class="clear_pull mt15">
+            #foreach($p in $data.NewsList)
+            <li><a href="$p.titleURL">$p.title</a><span class="time">$p.addTime</span></li>
+            #end
+        </ul>
+    </div>
+</div>
+
+<script language=javascript src='$data.hostUrl/templates/jsdy/footer.html'></script>
+<script src="$data.hostUrl/statics/js/public.js"></script>
+</body>
+
+</html>

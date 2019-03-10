@@ -1,0 +1,30 @@
+﻿#parse("header.html")
+<div class="contact">
+    <div class="title">联系我们 <b>/ CONTACT</b></div>
+    <div class="container clear_pull">
+        <div class="contact_left pull_left">
+            <script language=javascript src='http://tool.100dh.cn/rightPageHandler.ashx?uname=$data.username'></script>
+        </div>
+        <div class="pull_right">
+            <div id="map"></div>
+        </div>
+    </div>
+</div>
+<div class="news">
+    <div class="title">推荐阅读</div>
+    <div class="container">
+        <ul class="clear_pull mt15">
+            #foreach($p in $data.NewsList)
+            <li>
+                <a href="$p.titleURL">$p.title</a>
+                <span class="time">$p.addTime</span>
+            </li>
+            #end
+        </ul>
+    </div>
+</div>
+<script language=javascript src='$data.hostUrl/templates/jsdy/footer.html'></script>
+<script src="$data.hostUrl/statics/js/public.js"></script>
+</body>
+
+</html>

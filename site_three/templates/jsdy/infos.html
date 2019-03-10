@@ -1,0 +1,16 @@
+﻿#parse("header.html")
+<div class="news">
+    <div class="title">新闻资讯 <b>/ NEWS</b></div>
+    <div class="container">
+        <ul class="clear_pull mt15">
+            #foreach($p in $data.NewsList)
+            <li><a href="$p.titleURL">$p.title</a><span class="time">$p.addTime</span></li>
+            #end
+        </ul>
+    </div>
+</div>
+<script language=javascript src='$data.hostUrl/templates/jsdy/footer.html'></script>
+<script src="$data.hostUrl/statics/js/public.js"></script>
+</body>
+
+</html>

@@ -40,6 +40,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NVelocity, Version=1.1.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\NVelocity.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -56,8 +64,18 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.EnterpriseServices" />
+    <Reference Include="UrlRewriter, Version=1.0.4689.27093, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\UrlRewriter.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="handler\company\FooterHandler.ashx" />
+    <Content Include="handler\ModelHandler.ashx" />
+    <Content Include="handler\TestHandler.ashx" />
+    <Content Include="handler\company\CompanyHandler.ashx" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -66,11 +84,70 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Newtonsoft.Json.dll" />
+    <Content Include="NVelocity.dll" />
+    <Content Include="statics\css\uikit.docs.min.css" />
+    <Content Include="statics\js\jquery.min.js" />
+    <Content Include="statics\js\public.js" />
+    <Content Include="statics\js\slideset.js" />
+    <Content Include="statics\js\slideshow-fx.js" />
+    <Content Include="statics\js\slideshow.js" />
+    <Content Include="statics\js\uikit.min.js" />
+    <Content Include="statics\css\style.css" />
+    <Content Include="statics\css\style11.css" />
+    <Content Include="statics\images\favicon.ico" />
+    <Content Include="statics\images\logo.jpg" />
+    <Content Include="statics\images\nopic.gif" />
+    <Content Include="statics\images\qq.gif" />
+    <Content Include="statics\js\base64.min.js" />
+    <Content Include="templates\404.html" />
+    <Content Include="templates\jsdy\contact.html" />
+    <Content Include="templates\jsdy\footer.html" />
+    <Content Include="templates\jsdy\header.html" />
+    <Content Include="templates\jsdy\gundonghead.html" />
+    <Content Include="templates\jsdy\CompanyMain.html" />
+    <Content Include="templates\DetailModel.html" />
+    <Content Include="templates\foot.html" />
+    <Content Include="templates\head.html" />
+    <Content Include="templates\jsdy\introduce.html" />
+    <Content Include="templates\jsdy\infos.html" />
+    <Content Include="templates\jsdy\productions.html" />
+    <Content Include="templates\MainPage.html" />
+    <Content Include="templates\navigation.html" />
+    <Content Include="templates\Product.html" />
+    <Content Include="templates\sitemap.html" />
+    <Content Include="templates\sitemap.xml" />
+    <Content Include="UrlRewriter.dll" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLL.cs" />
+    <Compile Include="cmUserInfo.cs" />
+    <Compile Include="columnInfo.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="handler\company\CompanyHandler.ashx.cs">
+      <DependentUpon>CompanyHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\company\FooterHandler.ashx.cs">
+      <DependentUpon>FooterHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\ModelHandler.ashx.cs">
+      <DependentUpon>ModelHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="handler\TestHandler.ashx.cs">
+      <DependentUpon>TestHandler.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="htmlInfo.cs" />
+    <Compile Include="htmlPara.cs" />
+    <Compile Include="json.cs" />
+    <Compile Include="NetHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SqlHelper.cs" />
+    <Compile Include="Tools.cs" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
